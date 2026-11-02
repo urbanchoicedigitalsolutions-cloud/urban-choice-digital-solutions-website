@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100B2E">
+  <meta name="description" content="Urban Choice Digital Solutions builds smarter digital experiences through AI, web design, automation and creative technology.">
+  <title>Urban Choice Digital Solutions | We Build What's Next</title>
+  <style>
+    :root {
+      --midnight:#100B2E; --deep:#17103E; --royal:#30206B; --violet:#6447E8;
+      --lavender:#D7C8FF; --white:#fff; --muted:#B9B2D0; --line:rgba(215,200,255,.16);
+      --glow:0 0 45px rgba(100,71,232,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:#17142b;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(1160px,calc(100% - 44px));margin:auto}
+    .nav{position:absolute;z-index:5;top:0;left:0;width:100%;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;color:#fff;font-weight:850;letter-spacing:.08em;font-size:14px}
+    .brand-mark{width:37px;height:37px;border:1px solid rgba(215,200,255,.7);border-radius:12px;display:grid;place-items:center;color:var(--lavender);font-weight:900;background:rgba(100,71,232,.18)}
+    .nav-links{display:flex;gap:25px;color:#eee9ff;font-size:13px}
+    .nav-links a:hover{color:var(--lavender)}
+    .menu-btn{display:none;background:transparent;color:white;border:1px solid var(--line);border-radius:9px;padding:8px 12px}
+    .hero{position:relative;min-height:790px;height:100svh;max-height:1000px;background:var(--midnight);color:#fff;display:flex;align-items:center;overflow:hidden}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;opacity:.74}
+    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,7,31,.93) 0%,rgba(16,11,46,.73) 48%,rgba(16,11,46,.25) 100%),linear-gradient(0deg,rgba(16,11,46,.88),transparent 45%,rgba(16,11,46,.25))}
+    .hero-content{position:relative;z-index:2;padding-top:95px;max-width:800px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--lavender);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:27px;height:1px;background:var(--lavender)}
+    h1{font-size:clamp(43px,7.4vw,88px);line-height:.99;letter-spacing:-.065em;margin:24px 0 22px;font-weight:900}
+    h1 span{color:var(--lavender)}
+    .hero-sub{max-width:600px;color:#e4def6;font-size:clamp(15px,1.8vw,19px);margin:0 0 32px}
+    .actions{display:flex;flex-wrap:wrap;gap:13px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:9px;font-weight:750;font-size:13px;transition:.2s;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,#8066ff,#5334d5);color:white;box-shadow:var(--glow)}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.1)}
+    .btn-ghost{border-color:rgba(255,255,255,.38);color:white;background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+    .btn-ghost:hover{background:rgba(255,255,255,.14)}
+    .sound{position:absolute;z-index:3;right:25px;bottom:25px;background:rgba(13,9,39,.7);border:1px solid rgba(255,255,255,.35);color:#fff;padding:11px 15px;border-radius:30px;font-size:12px;cursor:pointer;backdrop-filter:blur(10px)}
+    .scroll-note{position:absolute;z-index:2;bottom:31px;left: max(22px, calc((100% - 1160px)/2));color:#ddd5f5;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    section{padding:105px 0}
+    .section-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6c55d8;font-weight:850}
+    h2{font-size:clamp(32px,4.5vw,53px);line-height:1.06;letter-spacing:-.045em;margin:15px 0 18px;color:#17142b}
+    .lead{max-width:680px;color:#666178;font-size:16px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+    .about-panel{background:linear-gradient(145deg,#17103e,#30206b);border-radius:22px;padding:36px;color:#fff;box-shadow:var(--glow);min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+    .about-panel strong{font-size:28px;line-height:1.15;letter-spacing:-.03em}
+    .about-panel p{color:#d8d0f1;margin-bottom:0}
+    .services{background:#f7f5fc}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:42px}
+    .section-head .lead{max-width:430px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .service-card{background:#fff;border:1px solid #e9e4f5;border-radius:16px;padding:27px;min-height:220px;transition:.22s}
+    .service-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(35,20,90,.09);border-color:#c8b9ff}
+    .icon{width:43px;height:43px;border-radius:12px;background:#eee9ff;color:#6045d5;display:grid;place-items:center;font-size:20px;margin-bottom:22px}
+    .service-card h3{margin:0 0 9px;font-size:18px;color:#211b3c}
+    .service-card p{margin:0;color:#706b80;font-size:14px}
+    .statement{background:var(--midnight);color:#fff;text-align:center}
+    .statement h2{color:#fff;max-width:850px;margin:18px auto}
+    .statement p{color:#c9c1e0;max-width:650px;margin:0 auto 28px}
+    .statement .section-kicker{color:var(--lavender)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+    .benefit{border-top:2px solid #d9d0f6;padding-top:20px}
+    .benefit b{display:block;font-size:17px;margin-bottom:8px}
+    .benefit p{color:#716b82;font-size:14px;margin:0}
+    .portfolio{background:#f7f5fc}
+    .portfolio-note{background:white;border:1px dashed #b9addf;padding:30px;border-radius:16px;color:#655d79}
+    .portfolio-note strong{color:#30206b;display:block;font-size:18px;margin-bottom:7px}
+    .faq-list{max-width:850px;margin:35px auto 0}
+    details{border-bottom:1px solid #e5e0ef;padding:19px 0}
+    summary{cursor:pointer;font-weight:750;color:#241d40;list-style:none;display:flex;justify-content:space-between;gap:15px}
+    summary:after{content:"+";color:#674ce0;font-size:21px;line-height:1}
+    details[open] summary:after{content:"−"}
+    details p{color:#716b82;margin:12px 0 0;font-size:14px}
+    .contact{background:linear-gradient(135deg,#100b2e,#21144e);color:white}
+    .contact h2{color:white}
+    .contact .lead{color:#c9c1e0}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:start}
+    .contact-info{color:#ddd5f5}
+    .contact-info a{color:#fff;text-decoration:underline;text-decoration-color:#806cff;text-underline-offset:4px}
+    form{background:#fff;color:#211b3c;padding:30px;border-radius:18px;display:grid;gap:14px}
+    label{font-size:12px;font-weight:750;display:grid;gap:7px}
+    input,select,textarea{width:100%;border:1px solid #e4dfef;border-radius:8px;padding:12px 13px;background:#fcfbff;color:#211b3c;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#8066ff;box-shadow:0 0 0 3px rgba(128,102,255,.12)}
+    textarea{min-height:115px;resize:vertical}
+    .form-note{font-size:11px;color:#777187;margin:0}
+    .form-status{font-size:12px;color:#4d3ab7;min-height:18px}
+    footer{background:#09061e;color:#bcb4d5;padding:25px 0;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-brand{color:#fff;font-weight:850;letter-spacing:.1em}
+    @media(max-width:800px){
+      .nav-links{display:none;position:absolute;top:74px;left:22px;right:22px;background:#17103e;padding:18px;border:1px solid var(--line);border-radius:12px;flex-direction:column;gap:15px}
+      .nav-links.open{display:flex}.menu-btn{display:block}
+      .hero{min-height:740px;height:94svh}.hero-video{object-position:54% center}.hero-shade{background:linear-gradient(90deg,rgba(10,7,31,.88),rgba(16,11,46,.43)),linear-gradient(0deg,rgba(16,11,46,.8),transparent 65%)}
+      .hero-content{padding-top:75px}.sound{right:18px;bottom:18px}.scroll-note{display:none}
+      section{padding:75px 0}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.cards{grid-template-columns:repeat(2,1fr)}.benefits-grid{grid-template-columns:1fr 1fr}.section-head{display:block}
+    }
+    @media(max-width:520px){
+      .container{width:min(100% - 36px,1160px)}.hero{min-height:700px}.hero-content{padding-top:80px}h1{font-size:48px}
+      .cards,.benefits-grid{grid-template-columns:1fr}.service-card{min-height:0}.about-panel{padding:27px;min-height:260px}
+      form{padding:22px}.sound{font-size:11px;padding:10px 12px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Urban Choice Digital Solutions home"><span class="brand-mark">UC</span><span>URBAN CHOICE<br><small style="font-weight:500;letter-spacing:.18em;color:#cfc5ef">DIGITAL SOLUTIONS</small></span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#benefits">Why Us</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQs</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="">
+        <source src="assets/urban-choice-hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <div class="eyebrow">Intelligence. Innovation. Impact.</div>
+        <h1>URBAN CHOICE<br><span>DIGITAL SOLUTIONS.</span></h1>
+        <p class="hero-sub">We turn ideas into intelligent digital experiences — helping businesses work smarter, connect better and move confidently into the future.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#services">Explore our services <span>↗</span></a>
+          <a class="btn btn-ghost" href="#contact">Let's build something</a>
+        </div>
+      </div>
+      <div class="scroll-note">Scroll to explore&nbsp; ↓</div>
+      <button class="sound" id="soundBtn" type="button" aria-pressed="false">♫ Play with sound</button>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-kicker">Who we are</div>
+          <h2>Technology should move your ideas forward.</h2>
+          <p class="lead">Urban Choice Digital Solutions is a digital innovation company creating practical technology solutions for businesses, organisations, entrepreneurs and individuals.</p>
+          <p class="lead">We bring creativity and technology together to make digital experiences more useful, engaging and effective.</p>
+        </div>
+        <div class="about-panel">
+          <div class="eyebrow">Our approach</div>
+          <strong>Think smarter.<br>Build better.<br>Grow further.</strong>
+          <p>We focus on solutions that serve a real purpose — not technology for technology's sake.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">What we do</div><h2>Digital solutions<br>with purpose.</h2></div>
+          <p class="lead">From intelligent customer experiences to your online presence, we help bring the right digital tools together.</p>
+        </div>
+        <div class="cards">
+          <article class="service-card"><div class="icon">✧</div><h3>AI Chatbots</h3><p>Conversational assistants that help answer questions, guide visitors and support customer engagement.</p></article>
+          <article class="service-card"><div class="icon">⌘</div><h3>AI Agents</h3><p>Purpose-built AI assistants designed to support tasks and streamline digital workflows.</p></article>
+          <article class="service-card"><div class="icon">▣</div><h3>Website Design</h3><p>Modern, responsive websites that communicate your brand and make it easier for people to connect with you.</p></article>
+          <article class="service-card"><div class="icon">⚙</div><h3>Business Automation</h3><p>Smarter digital processes that can reduce repetitive work and make everyday operations more organised.</p></article>
+          <article class="service-card"><div class="icon">▶</div><h3>Promotional Videos</h3><p>Creative video content for businesses, campaigns, events and product or service promotion.</p></article>
+          <article class="service-card"><div class="icon">✦</div><h3>Digital Solutions</h3><p>Thoughtful digital support shaped around your goals, audience and project requirements.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="container">
+        <div class="section-kicker">The Urban Choice difference</div>
+        <h2>Your next big idea deserves more than an ordinary digital experience.</h2>
+        <p>We combine creative thinking, practical technology and a customer-focused approach to help turn possibilities into useful solutions.</p>
+        <a class="btn btn-primary" href="#contact">Tell us what you're building ↗</a>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <div class="section-kicker">Why work with us</div>
+        <h2>Built around your goals.</h2>
+        <p class="lead">Every project starts with understanding what you need and who you want to reach.</p>
+        <div class="benefits-grid">
+          <div class="benefit"><b>Solutions with purpose</b><p>We focus on the problem your project needs to solve and the experience you want to create.</p></div>
+          <div class="benefit"><b>Creative and practical</b><p>We bring fresh ideas together with tools and features that have a clear use.</p></div>
+          <div class="benefit"><b>Customer-focused</b><p>Your audience, business goals and project requirements guide the direction.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-kicker">Selected work</div>
+        <h2>Ideas in progress.<br>Possibilities in motion.</h2>
+        <p class="lead">We're preparing this space to showcase real projects, working demonstrations and creative work from Urban Choice Digital Solutions.</p>
+        <div class="portfolio-note"><strong>Our portfolio is being prepared.</strong>We won't fill this section with made-up client work or invented results. Check back as real projects and demonstrations are added.</div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div style="text-align:center"><div class="section-kicker">FAQs</div><h2>Questions? Let's make things clear.</h2></div>
+        <div class="faq-list">
+          <details><summary>Who can work with Urban Choice Digital Solutions?</summary><p>We work with small and medium-sized businesses, larger organisations, entrepreneurs, startups, schools, individuals and personal brands.</p></details>
+          <details><summary>Do you work with clients outside Nigeria?</summary><p>Yes. Urban Choice Digital Solutions serves clients in Nigeria and internationally.</p></details>
+          <details><summary>How do I request a service?</summary><p>Send an enquiry through the contact form with the service you need and a short description of your project. We'll use the details to understand your request.</p></details>
+          <details><summary>When does work begin?</summary><p>Full payment is required before work begins. The payment and refund terms will be clearly communicated before payment and are subject to applicable consumer-protection laws and any specific written agreement.</p></details>
+          <details><summary>Can I request a solution tailored to my business?</summary><p>Yes. Share your goals and requirements with us so we can understand the kind of solution you're looking for.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-kicker" style="color:#c9baff">Let's talk</div>
+          <h2>Have an idea?<br>Let's build it.</h2>
+          <p class="lead">Tell us a little about what you need. We'll be glad to hear about your project.</p>
+          <div class="contact-info">
+            <p><b>Email</b><br><a href="mailto:urbanchoicedigitalsolutions@gmail.com">urbanchoicedigitalsolutions@gmail.com</a></p>
+            <p><b>Serving</b><br>Nigeria and clients worldwide</p>
+          </div>
+        </div>
+        <form id="contactForm">
+          <label>Your name<input name="name" autocomplete="name" required placeholder="Enter your name"></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>Business or organisation (optional)<input name="business" placeholder="Business name"></label>
+          <label>Service you're interested in
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>AI Chatbot</option><option>AI Agent</option><option>Website Design</option><option>Business Automation</option><option>Promotional Video</option><option>Other Digital Solution</option>
+            </select>
+          </label>
+          <label>Tell us about your project<textarea name="message" required placeholder="What would you like us to help you build?"></textarea></label>
+          <button class="btn btn-primary" type="submit">Prepare my enquiry ↗</button>
+          <p class="form-note">This form opens an email draft addressed to Urban Choice. Review it and press Send in your email app to submit your enquiry.</p>
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><span class="footer-brand">URBAN CHOICE DIGITAL SOLUTIONS</span><br>We build what's next.</div><div>© <span id="year"></span> Urban Choice Digital Solutions. All rights reserved.</div></div></footer>
+
+  <script>
+    const video = document.getElementById('heroVideo');
+    const soundBtn = document.getElementById('soundBtn');
+    soundBtn.addEventListener('click', async () => {
+      try {
+        if (video.muted) {
+          video.muted = false;
+          video.volume = 1;
+          await video.play();
+          soundBtn.textContent = '♫ Sound on';
+          soundBtn.setAttribute('aria-pressed','true');
+        } else {
+          video.muted = true;
+          soundBtn.textContent = '♫ Play with sound';
+          soundBtn.setAttribute('aria-pressed','false');
+        }
+      } catch (e) {
+        soundBtn.textContent = 'Tap to enable sound';
+      }
+    });
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(e.currentTarget);
+      const subject = encodeURIComponent('Website enquiry: ' + data.get('service'));
+      const body = encodeURIComponent(
+        'Name: ' + data.get('name') + '\\nEmail: ' + data.get('email') +
+        '\\nBusiness: ' + (data.get('business') || 'Not provided') +
+        '\\nService: ' + data.get('service') + '\\n\\nProject details:\\n' + data.get('message')
+      );
+      document.getElementById('formStatus').textContent = 'Opening your email app… Please review and send the prepared message.';
+      window.location.href = 'mailto:urbanchoicedigitalsolutions@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
